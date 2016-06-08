@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//page[@string='Operations']" position="after">
                     <page string="Landed Cost"
-                          attrs="{'invisible': [('distribution_id', '!=', False)]}"> <!-- TODO: add groups for manage landed cost -->
+                          attrs="{'invisible': [('landed_cost', '=', False)]}"> <!-- TODO: add groups for manage landed cost -->
                         <field name="expense_ids" attrs="{'readonly': [('state', '=', 'done')]}">
                             <tree editable="bottom">
                                 <field name="type"/>
@@ -30,7 +30,7 @@
                         </field>
                     </page>
                     <page string="Cost Lines"
-                          attrs="{'invisible': [('distribution_id', '=', False)]}"> <!-- TODO: add groups for manage landed cost -->
+                          attrs="{'invisible': [('cost_line_ids', '=', [])]}"> <!-- TODO: add groups for manage landed cost -->
                         <field name="cost_line_ids">
                             <tree string="Costs distribution picking lines" create="false" editable="top">
                                 <field name="picking_id"/>
@@ -43,6 +43,7 @@
                                 <field name="cost_ratio"/>
                                 <field name="standard_price_old"/>
                                 <field name="standard_price_new"/>
+                                <field name="state"/>
                             </tree>
                         </field>
                     </page>
@@ -50,6 +51,7 @@
                 <xpath expr="//field[@name='picking_type_id']" position="after">
                     <field name="journal_id"/>
                     <field name="distribution_id" invisible="1"/>
+                    <field name="landed_cost" invisible="1"/>
                 </xpath>
             </field>
         </record>
