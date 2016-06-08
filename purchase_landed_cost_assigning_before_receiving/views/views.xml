@@ -84,16 +84,16 @@
             </field>
         </record>
 
-        <record id="npp_purchase_cost_distribute_hidden_button_form_view" model="ir.ui.view">
-            <field name="name">npp.purchase.cost.distribution.hidden</field>
-            <field name="model">purchase.cost.distribution</field>
-            <field name="inherit_id" ref="purchase_landed_cost.purchase_cost_distribution_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//button[@name='action_done']" position="attributes">
-                    <attribute name="invisible">1</attribute>
-                </xpath>
-            </field>
-        </record>
+        <!--<record id="npp_purchase_cost_distribute_hidden_button_form_view" model="ir.ui.view">-->
+            <!--<field name="name">npp.purchase.cost.distribution.hidden</field>-->
+            <!--<field name="model">purchase.cost.distribution</field>-->
+            <!--<field name="inherit_id" ref="purchase_landed_cost.purchase_cost_distribution_form"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<xpath expr="//button[@name='action_done']" position="attributes">-->
+                    <!--<attribute name="invisible">1</attribute>-->
+                <!--</xpath>-->
+            <!--</field>-->
+        <!--</record>-->
 
     </data>
 </openerp>

@@ -12,8 +12,8 @@ class extendPickingImportWizard(models.TransientModel):
         column2='picking_id', string='Incoming shipments',
         domain="[('partner_id', 'child_of', supplier),"
                "('location_id.usage', '=', 'supplier'),"
-               "('state', '=', 'landed_cost'),"
-               "('id', 'not in', prev_pickings[0][2])]", required=True)
+               "('id', 'not in', prev_pickings[0][2]),"
+               "('state', 'in', ('landed_cost','done'))]", required=True)
 
     @api.multi
     def action_import_picking(self):

@@ -6,7 +6,7 @@ from openerp import models, fields, api
 class nppPurchase(models.Model):
     _inherit = 'purchase.order'
 
-    landed_cost = fields.Boolean(string='Landed Cost', default=True)
+    landed_cost = fields.Boolean(string='Landed Cost', default=False)
 
     @api.multi
     def wkf_confirm_order(self):
